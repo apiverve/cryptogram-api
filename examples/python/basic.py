@@ -17,14 +17,11 @@ def call_cryptogram_api():
     Make a GET request to the Cryptogram Generator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;text&#x27;: &#x27;The quick brown fox&#x27;, &#x27;random&#x27;: true}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
