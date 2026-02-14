@@ -1,40 +1,41 @@
 openapi: 3.0.4
 info:
   title: Cryptogram Generator
-  description: Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.
+  description: >-
+    Cryptogram Generator creates letter substitution cipher puzzles where each
+    letter is replaced with another letter consistently throughout the text.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/cryptogram:
     get:
       summary: Generate Cryptogram
-      description: Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.
+      description: Create a cryptogram puzzle
       operationId: cryptogram
       parameters:
-      - name: text
-        in: query
-        schema:
-          type: string
-        required: false
-        description: Text to encode (max 500 characters)
-        example: The quick brown fox
-      - name: random
-        default: true
-        in: query
-        schema:
-          type: boolean
-        required: false
-        description: Use a random famous quote
-        example: true
+        - name: text
+          in: query
+          schema:
+            type: string
+          required: false
+          description: Text to encode (max 500 characters)
+          example: The quick brown fox
+        - name: random
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Use a random famous quote
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -50,60 +51,182 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  encoded: SDVF DX JRHZ RHYYFMX JRFM OPG HQF LGXO WHADMB PZRFQ YSHMX
-                  original: Life is what happens when you are busy making other plans
+                  encoded: PNR MJSXQRV JI K PNJSGKQC DBFRG ARWBQG ZBPN K GBQWFR GPRY
+                  original: The journey of a thousand miles begins with a single step
                   cipher:
-                    A: H
-                    B: L
-                    C: E
+                    A: K
+                    B: A
+                    C: H
                     D: C
-                    E: F
-                    F: V
-                    G: B
-                    H: R
-                    I: D
-                    J: T
-                    K: A
-                    L: S
-                    M: W
-                    N: M
-                    O: P
-                    P: Y
-                    Q: N
-                    R: Q
-                    S: X
-                    T: Z
-                    U: G
-                    V: U
-                    W: J
-                    X: K
-                    Y: O
-                    Z: I
+                    E: R
+                    F: I
+                    G: W
+                    H: 'N'
+                    I: B
+                    J: M
+                    K: E
+                    L: F
+                    M: D
+                    'N': Q
+                    O: J
+                    P: 'Y'
+                    Q: T
+                    R: X
+                    S: G
+                    T: P
+                    U: S
+                    V: L
+                    W: Z
+                    X: O
+                    'Y': V
+                    Z: U
                   letterCount: 47
                   wordCount: 11
-                  html: "<html><head><title>Cryptogram Puzzle</title><style>body {font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto;}h1 {text-align: center;}.puzzle {font-family: monospace; font-size: 24px; letter-spacing: 3px; line-height: 2.5; word-wrap: break-word;}.letter-box {display: inline-block; text-align: center; margin: 2px;}.encoded {border-bottom: 2px solid #333; min-width: 20px; display: block;}.answer {color: #ccc; font-size: 14px;}.space {width: 15px; display: inline-block;}.hint {margin-top: 30px; padding: 15px; background: #f5f5f5; border-radius: 5px;}.hint h3 {margin-top: 0;}</style></head><body><h1>Cryptogram</h1><div class='puzzle'><span class='letter-box'><span class='encoded'>S</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>D</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>V</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>F</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>D</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>X</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>J</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>R</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>H</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Z</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>R</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>H</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Y</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Y</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>F</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>M</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>X</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>J</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>R</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>F</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>M</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>O</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>P</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>G</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>H</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Q</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>F</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>L</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>G</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>X</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>O</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>W</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>H</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>A</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>D</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>M</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>B</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>P</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Z</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>R</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>F</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>Q</span><span class='answer'>_</span></span><span class='space'></span><span class='letter-box'><span class='encoded'>Y</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>S</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>H</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>M</span><span class='answer'>_</span></span><span class='letter-box'><span class='encoded'>X</span><span class='answer'>_</span></span></div><div class='hint'><h3>Letter Frequency:</h3><p>F=5, H=5, X=4, R=4, M=4, D=3, Y=3, S=2, J=2, Z=2, O=2, P=2, G=2, Q=2, V=1, L=1, W=1, A=1, B=1</p></div></body></html>"
+                  html: >-
+                    <html><head><title>Cryptogram Puzzle</title><style>body
+                    {font-family: Arial, sans-serif; padding: 20px; max-width:
+                    800px; margin: 0 auto;}h1 {text-align: center;}.puzzle
+                    {font-family: monospace; font-size: 24px; letter-spacing:
+                    3px; line-height: 2.5; word-wrap: break-word;}.letter-box
+                    {display: inline-block; text-align: center; margin:
+                    2px;}.encoded {border-bottom: 2px solid #333; min-width:
+                    20px; display: block;}.answer {color: #ccc; font-size:
+                    14px;}.space {width: 15px; display: inline-block;}.hint
+                    {margin-top: 30px; padding: 15px; background: #f5f5f5;
+                    border-radius: 5px;}.hint h3 {margin-top:
+                    0;}</style></head><body><h1>Cryptogram</h1><div
+                    class='puzzle'><span class='letter-box'><span
+                    class='encoded'>P</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>N</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>M</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>J</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>S</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>X</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>Q</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>V</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>J</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>I</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>K</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>P</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>N</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>J</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>S</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>G</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>K</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>Q</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>C</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>D</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>B</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>F</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>G</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>A</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>W</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>B</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>Q</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>G</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>Z</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>B</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>P</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>N</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>K</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>G</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>B</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>Q</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>W</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>F</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span
+                    class='space'></span><span class='letter-box'><span
+                    class='encoded'>G</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>P</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>R</span><span
+                    class='answer'>_</span></span><span class='letter-box'><span
+                    class='encoded'>Y</span><span
+                    class='answer'>_</span></span></div><div
+                    class='hint'><h3>Letter Frequency:</h3><p>R=6, G=5, P=4,
+                    Q=4, B=4, N=3, J=3, K=3, S=2, F=2, W=2, M=1, X=1, V=1, I=1,
+                    C=1, D=1, A=1, Z=1, Y=1</p></div></body></html>
                   image:
-                    imageName: 0c97c656-8539-4821-b57e-65e7960343eb_puzzle.png
+                    imageName: 0afa5de4-52fb-4902-8139-c177c08ac98b_puzzle.png
                     format: .png
-                    downloadURL: https://storage.googleapis.com/apiverve.appspot.com/cryptogram/0c97c656-8539-4821-b57e-65e7960343eb_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1764735737&Signature=goEvx1i2b3GCRF%2FiEyRMYfXYxdx1PStlkMnNmRPKIkkyPZqj1NS7q%2BrliWd2E4z7GxXQNOdpOE6ngRxvptzMzFaj1WNvuta%2BDXDf6o7gQma1grNmvOx%2F4LKGhy0S1w89uqmhG7z9tnSn0XFOy6L%2BfhAw2Uy2nFNHtdzUFRDs6ru9x44dRC5wHUYcr%2Fdt7H9jAQnJ7uywJJebGmMKCPbTU1ZHi7LW0OvbOf%2FouSdSAab5MCymh8WBXY5Xs4GC9jYBeWE3HrrwDHGUgUWYK06f5SLXvgmvZuQ8fkiRrh%2FqoRZr0lCjFWq%2BMFwsiPAYmoRg0hm4ADa8%2BoEmjt9z%2F22x3A%3D%3D
-                    expires: 1764735737560
+                    downloadURL: >-
+                      https://storage.googleapis.com/apiverve/APIData/cryptogram/0afa5de4-52fb-4902-8139-c177c08ac98b_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=guv7GNCup4lJXTI0iCF7Bo2Cz02Wl6h2HWC0YxJ0jtzb7w%2BlW80b1OzBlGR%2BneFxFdzQPwfIuMQlaHsW0KFqPh5ITsFkSt802OEUFyxuiDn71y4XkiJx8zVDhrxNH9R9i1befMM16c%2F4WQGpgzkaaXw8TJJUT2q2s8c8ESo41K85iYcHJZ%2BGUxXeMeFDJ%2FG38pq5txarX%2F0rnmdTk0Jk%2BhEox9PXFPCzaSvWbDFYDVABIt97N2NQyqlDPRcucrm5uuE5Jb9qjT80JqzlumfqiaR3DpgPDwZkWeVyuYW4b4TZCCbbEpK%2FIlRRUZTw9gYdxDpk0B35NKN9WKSCi%2BfFWQ%3D%3D
+                    expires: 1766010132300
                   solutionImage:
-                    imageName: cd314685-d2ad-443a-8058-b918de1de244_solution.png
+                    imageName: 41e6b5b7-d98c-4d4d-8b44-f56bdb5160b9_solution.png
                     format: .png
-                    downloadURL: https://storage.googleapis.com/apiverve.appspot.com/cryptogram/cd314685-d2ad-443a-8058-b918de1de244_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1764735738&Signature=e8P5kdAEdU8PDglB4aZzXQHszL4NmVgyRPs%2FDzlQiDrLMJapVJjNvBphU5oxVXNPvc78mEqPYqMjBGxNkc3sc%2Bn1oX%2BptA1TVk3Yg6pbQXQqkh5jdC8AIhBsebfelhkP1p0SwShL%2BsHhMEnVy%2BFEUb%2B%2BDtW%2BYyQg92C%2B5LxdwqDVdjeTkY17EdixnacXg3nLw0XvOrVHsCuLuWHyJhpnQCOetLHlCir23swJtB178W%2BCO87Rj4bnPfnKpdOCooHvXTZORbrcJSbE2rUTXMdNw9Lnc8wRuJ0iRp3z4EuPhwd28ZBbP%2BiTRX1vM4%2Fo1fN0xn7LlTIuZZH8mkVsWidhDA%3D%3D
-                    expires: 1764735738052
+                    downloadURL: >-
+                      https://storage.googleapis.com/apiverve/APIData/cryptogram/41e6b5b7-d98c-4d4d-8b44-f56bdb5160b9_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=YKDpJF9MYlmXjASdgVUgtPCq8%2Fp59Eci6DIAbXuHzv9B4rALSZwyq1sMj9KoIRhryYCdNW1KGBRpcgJFSFgaEGfcNC1MNsryoV%2F7bp3TSr1%2BknwqAGQu7sWvZrtozB2oJ3Wzaqz%2BGjm74rhrOaqAx0w7%2BmJtimslEHCl8emRuZxmAhW9l8Wi%2Fv%2BsCmb7%2Bl5hj0njHSs6AWo3YtoZpWoNv7F49g1dQczrfj%2BFYW7bOoFMfcmysTz%2ByNpXECZFbvWJ3A2f0fql7itGLGK%2B%2BNlI6Q6WkQ1ye3c7skHB3DqT%2BWHLbJCm0vjbIVhIgq3Vo39ZADdogcd7uiklvEBriMFkwA%3D%3D
+                    expires: 1766010132645
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -111,4 +234,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
