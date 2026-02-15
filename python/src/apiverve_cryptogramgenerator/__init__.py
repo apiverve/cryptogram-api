@@ -1,1 +1,3 @@
-from .apiClient import CryptogramAPIClient
+from .apiClient import CryptogramAPIClient, CryptogramAPIClientError
+
+__all__ = ['CryptogramAPIClient', 'CryptogramAPIClientError']
