@@ -1,4 +1,4 @@
-APIVerve.API.CryptogramGenerator API
+CryptogramGenerator API
 ============
 
 Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.
@@ -7,7 +7,7 @@ Cryptogram Generator creates letter substitution cipher puzzles where each lette
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [APIVerve.API.CryptogramGenerator API](https://apiverve.com/marketplace/cryptogram)
+This is a .NET Wrapper for the [CryptogramGenerator API](https://apiverve.com/marketplace/cryptogram?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -41,7 +41,7 @@ From within Visual Studio:
 ## Configuration
 
 Before using the cryptogram API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com)
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -60,7 +60,7 @@ class Program
         // Initialize the API client
         var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new CryptogramGeneratorQueryOptions {
+        var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -93,13 +93,13 @@ class Program
 
 ## Usage
 
-The APIVerve.API.CryptogramGenerator API documentation is found here: [https://docs.apiverve.com/ref/cryptogram](https://docs.apiverve.com/ref/cryptogram).
+The CryptogramGenerator API documentation is found here: [https://docs.apiverve.com/ref/cryptogram](https://docs.apiverve.com/ref/cryptogram?utm_source=nuget&utm_medium=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
 ###### Authentication
-APIVerve.API.CryptogramGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
+CryptogramGenerator API uses API Key-based authentication. When you create an instance of the API client, you can pass your API Key as a parameter.
 
 ```csharp
 // Create an instance of the API client
@@ -125,7 +125,7 @@ public class Example
     {
         var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new CryptogramGeneratorQueryOptions {
+        var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -158,7 +158,7 @@ public class Example
     {
         var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new CryptogramGeneratorQueryOptions {
+        var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -196,7 +196,7 @@ public class Example
     {
         var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new CryptogramGeneratorQueryOptions {
+        var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -253,7 +253,7 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new CryptogramGeneratorQueryOptions {
+        var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -295,7 +295,7 @@ var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new CryptogramGeneratorQueryOptions {
+var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -322,7 +322,7 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new CryptogramGeneratorQueryOptions {
+var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -341,7 +341,7 @@ var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new CryptogramGeneratorQueryOptions {
+var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -356,7 +356,7 @@ The API client implements `IDisposable` for proper resource cleanup:
 ```csharp
 using (var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]"))
 {
-    var queryOptions = new CryptogramGeneratorQueryOptions {
+    var queryOptions = new QueryOptions {
   text = "The quick brown fox",
   random = true
 };
@@ -428,7 +428,7 @@ using (var apiClient = new CryptogramGeneratorAPIClient("[YOUR_API_KEY]"))
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=nuget&utm_medium=readme).
 
 ---
 
@@ -439,14 +439,14 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=nuget&utm_medium=readme) and all legal documents and agreements.
 
 ---
 
 ## License
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2025 APIVerve, and EvlarSoft LLC
+Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
