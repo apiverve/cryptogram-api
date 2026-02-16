@@ -44,7 +44,10 @@ from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient
 # Initialize the client with your APIVerve API key
 api = CryptogramAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 ```
 
 ###### Simple Request
@@ -164,7 +170,10 @@ from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient, Cryptogr
 
 api = CryptogramAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 
 try:
     result = api.execute(query)
@@ -185,7 +194,10 @@ from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient, Cryptogr
 
 api = CryptogramAPIClient("[YOUR_API_KEY]")
 
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 
 try:
     result = api.execute(query)
@@ -219,7 +231,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient, CryptogramAPIClientError
 
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 
 # Using context manager ensures proper cleanup
 with CryptogramAPIClient("[YOUR_API_KEY]") as api:
@@ -245,7 +260,10 @@ from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient
 # Enable debug mode
 api = CryptogramAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "text": "The quick brown fox", "random": true }
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -260,8 +278,12 @@ from apiverve_cryptogramgenerator.apiClient import CryptogramAPIClient
 
 api = CryptogramAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "text": "The quick brown fox",
+    "random": true
+}
+
 try:
-    query = { "text": "The quick brown fox", "random": true }
     result = api.execute(query)
     print(result)
 finally:
