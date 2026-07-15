@@ -36,6 +36,20 @@ paths:
           required: false
           description: Use a random famous quote
           example: true
+        - name: image
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to generate a downloadable puzzle image
+          example: true
+        - name: solutionImage
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: Set to true to generate a downloadable solution image
+          example: true
       responses:
         '200':
           description: Successful Response
