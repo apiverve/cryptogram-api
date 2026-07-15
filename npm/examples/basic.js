@@ -16,7 +16,9 @@ const api = new cryptogramAPI({
 // Example query
 var query = {
   text: "The quick brown fox",
-  random: true
+  random: true,
+  image: false,
+  solutionImage: false
 };
 
 // Make the API request using callback
