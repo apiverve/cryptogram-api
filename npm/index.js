@@ -30,7 +30,7 @@ class cryptogramWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/cryptogram';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"text":{"type":"string","required":false,"maxLength":500},"random":{"type":"boolean","required":false,"default":true}};
+        this.validationRules = {"text":{"type":"string","required":false,"maxLength":500},"random":{"type":"boolean","required":false,"default":true},"image":{"type":"boolean","required":false,"default":false},"solutionImage":{"type":"boolean","required":false,"default":false}};
     }
 
     /**
