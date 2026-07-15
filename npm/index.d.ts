@@ -4,59 +4,42 @@ declare module '@apiverve/cryptogram' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface cryptogramResponse {
     status: string;
     error: string | null;
     data: CryptogramGeneratorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface CryptogramGeneratorData {
-      encoded:       string;
-      original:      string;
-      cipher:        Cipher;
-      letterCount:   number;
-      wordCount:     number;
-      html:          string;
+      encoded:       null | string;
+      original:      null | string;
+      cipher:        { [key: string]: null | string };
+      letterCount:   number | null;
+      wordCount:     number | null;
+      html:          null | string;
       image:         Image;
       solutionImage: Image;
   }
   
-  interface Cipher {
-      a: string;
-      b: string;
-      c: string;
-      d: string;
-      e: string;
-      f: string;
-      g: string;
-      h: string;
-      i: string;
-      j: string;
-      k: string;
-      l: string;
-      m: string;
-      n: string;
-      o: string;
-      p: string;
-      q: string;
-      r: string;
-      s: string;
-      t: string;
-      u: string;
-      v: string;
-      w: string;
-      x: string;
-      y: string;
-      z: string;
-  }
-  
   interface Image {
-      imageName:   string;
-      format:      string;
-      downloadURL: string;
-      expires:     number;
+      imageName:   null | string;
+      format:      null | string;
+      downloadURL: null | string;
+      expires:     number | null;
   }
 
   export default class cryptogramWrapper {
