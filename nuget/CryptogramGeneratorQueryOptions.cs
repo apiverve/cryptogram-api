@@ -20,6 +20,18 @@ namespace APIVerve.API.CryptogramGenerator
         /// Use a random famous quote
         /// </summary>
         [JsonProperty("random")]
-        public string Random { get; set; }
+        public bool? Random { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable puzzle image
+        /// </summary>
+        [JsonProperty("image")]
+        public bool? Image { get; set; }
+
+        /// <summary>
+        /// Set to true to generate a downloadable solution image
+        /// </summary>
+        [JsonProperty("solutionImage")]
+        public bool? SolutionImage { get; set; }
     }
 }
