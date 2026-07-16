@@ -25,6 +25,9 @@ namespace APIVerve.API.CryptogramGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,13 +39,13 @@ namespace APIVerve.API.CryptogramGenerator
         public string Original { get; set; }
 
         [JsonProperty("cipher")]
-        public Cipher Cipher { get; set; }
+        public Dictionary<string, string> Cipher { get; set; }
 
         [JsonProperty("letterCount")]
-        public long LetterCount { get; set; }
+        public long? LetterCount { get; set; }
 
         [JsonProperty("wordCount")]
-        public long WordCount { get; set; }
+        public long? WordCount { get; set; }
 
         [JsonProperty("html")]
         public string Html { get; set; }
@@ -52,87 +55,6 @@ namespace APIVerve.API.CryptogramGenerator
 
         [JsonProperty("solutionImage")]
         public Image SolutionImage { get; set; }
-    }
-
-    public partial class Cipher
-    {
-        [JsonProperty("A")]
-        public string A { get; set; }
-
-        [JsonProperty("B")]
-        public string B { get; set; }
-
-        [JsonProperty("C")]
-        public string C { get; set; }
-
-        [JsonProperty("D")]
-        public string D { get; set; }
-
-        [JsonProperty("E")]
-        public string E { get; set; }
-
-        [JsonProperty("F")]
-        public string F { get; set; }
-
-        [JsonProperty("G")]
-        public string G { get; set; }
-
-        [JsonProperty("H")]
-        public string H { get; set; }
-
-        [JsonProperty("I")]
-        public string I { get; set; }
-
-        [JsonProperty("J")]
-        public string J { get; set; }
-
-        [JsonProperty("K")]
-        public string K { get; set; }
-
-        [JsonProperty("L")]
-        public string L { get; set; }
-
-        [JsonProperty("M")]
-        public string M { get; set; }
-
-        [JsonProperty("N")]
-        public string N { get; set; }
-
-        [JsonProperty("O")]
-        public string O { get; set; }
-
-        [JsonProperty("P")]
-        public string P { get; set; }
-
-        [JsonProperty("Q")]
-        public string Q { get; set; }
-
-        [JsonProperty("R")]
-        public string R { get; set; }
-
-        [JsonProperty("S")]
-        public string S { get; set; }
-
-        [JsonProperty("T")]
-        public string T { get; set; }
-
-        [JsonProperty("U")]
-        public string U { get; set; }
-
-        [JsonProperty("V")]
-        public string V { get; set; }
-
-        [JsonProperty("W")]
-        public string W { get; set; }
-
-        [JsonProperty("X")]
-        public string X { get; set; }
-
-        [JsonProperty("Y")]
-        public string Y { get; set; }
-
-        [JsonProperty("Z")]
-        public string Z { get; set; }
     }
 
     public partial class Image
@@ -147,6 +69,18 @@ namespace APIVerve.API.CryptogramGenerator
         public Uri DownloadUrl { get; set; }
 
         [JsonProperty("expires")]
-        public long Expires { get; set; }
+        public long? Expires { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
