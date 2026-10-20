@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/cryptogram:
     get:
-      summary: Generate Cryptogram
+      summary: Cryptogram Generator
       description: Create a cryptogram puzzle
       operationId: cryptogram
       parameters:
@@ -34,7 +34,9 @@ paths:
           schema:
             type: boolean
           required: false
-          description: Use a random famous quote
+          description: >-
+            Use a random famous quote instead of text (a quote is also used when
+            text is omitted)
           example: true
         - name: image
           in: query
@@ -226,14 +228,12 @@ paths:
                   image:
                     imageName: 0afa5de4-52fb-4902-8139-c177c08ac98b_puzzle.png
                     format: .png
-                    downloadURL: >-
-                      https://storage.googleapis.com/apiverve/APIData/cryptogram/0afa5de4-52fb-4902-8139-c177c08ac98b_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=guv7GNCup4lJXTI0iCF7Bo2Cz02Wl6h2HWC0YxJ0jtzb7w%2BlW80b1OzBlGR%2BneFxFdzQPwfIuMQlaHsW0KFqPh5ITsFkSt802OEUFyxuiDn71y4XkiJx8zVDhrxNH9R9i1befMM16c%2F4WQGpgzkaaXw8TJJUT2q2s8c8ESo41K85iYcHJZ%2BGUxXeMeFDJ%2FG38pq5txarX%2F0rnmdTk0Jk%2BhEox9PXFPCzaSvWbDFYDVABIt97N2NQyqlDPRcucrm5uuE5Jb9qjT80JqzlumfqiaR3DpgPDwZkWeVyuYW4b4TZCCbbEpK%2FIlRRUZTw9gYdxDpk0B35NKN9WKSCi%2BfFWQ%3D%3D
+                    downloadURL: https://storage.googleapis.com/apiverve/APIData/cryptogram/0afa5de4-52fb-4902-8139-c177c08ac98b_puzzle.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=guv7GNCup4lJXTI0iCF7Bo2Cz02Wl6h2HWC0YxJ0jtzb7w%2BlW80b1OzBlGR%2BneFxFdzQPwfIuMQlaHsW0KFqPh5ITsFkSt802OEUFyxuiDn71y4XkiJx8zVDhrxNH9R9i1befMM16c%2F4WQGpgzkaaXw8TJJUT2q2s8c8ESo41K85iYcHJZ%2BGUxXeMeFDJ%2FG38pq5txarX%2F0rnmdTk0Jk%2BhEox9PXFPCzaSvWbDFYDVABIt97N2NQyqlDPRcucrm5uuE5Jb9qjT80JqzlumfqiaR3DpgPDwZkWeVyuYW4b4TZCCbbEpK%2FIlRRUZTw9gYdxDpk0B35NKN9WKSCi%2BfFWQ%3D%3D
                     expires: 1766010132300
                   solutionImage:
                     imageName: 41e6b5b7-d98c-4d4d-8b44-f56bdb5160b9_solution.png
                     format: .png
-                    downloadURL: >-
-                      https://storage.googleapis.com/apiverve/APIData/cryptogram/41e6b5b7-d98c-4d4d-8b44-f56bdb5160b9_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=YKDpJF9MYlmXjASdgVUgtPCq8%2Fp59Eci6DIAbXuHzv9B4rALSZwyq1sMj9KoIRhryYCdNW1KGBRpcgJFSFgaEGfcNC1MNsryoV%2F7bp3TSr1%2BknwqAGQu7sWvZrtozB2oJ3Wzaqz%2BGjm74rhrOaqAx0w7%2BmJtimslEHCl8emRuZxmAhW9l8Wi%2Fv%2BsCmb7%2Bl5hj0njHSs6AWo3YtoZpWoNv7F49g1dQczrfj%2BFYW7bOoFMfcmysTz%2ByNpXECZFbvWJ3A2f0fql7itGLGK%2B%2BNlI6Q6WkQ1ye3c7skHB3DqT%2BWHLbJCm0vjbIVhIgq3Vo39ZADdogcd7uiklvEBriMFkwA%3D%3D
+                    downloadURL: https://storage.googleapis.com/apiverve/APIData/cryptogram/41e6b5b7-d98c-4d4d-8b44-f56bdb5160b9_solution.png?GoogleAccessId=635500398038-compute%40developer.gserviceaccount.com&Expires=1766010132&Signature=YKDpJF9MYlmXjASdgVUgtPCq8%2Fp59Eci6DIAbXuHzv9B4rALSZwyq1sMj9KoIRhryYCdNW1KGBRpcgJFSFgaEGfcNC1MNsryoV%2F7bp3TSr1%2BknwqAGQu7sWvZrtozB2oJ3Wzaqz%2BGjm74rhrOaqAx0w7%2BmJtimslEHCl8emRuZxmAhW9l8Wi%2Fv%2BsCmb7%2Bl5hj0njHSs6AWo3YtoZpWoNv7F49g1dQczrfj%2BFYW7bOoFMfcmysTz%2ByNpXECZFbvWJ3A2f0fql7itGLGK%2B%2BNlI6Q6WkQ1ye3c7skHB3DqT%2BWHLbJCm0vjbIVhIgq3Vo39ZADdogcd7uiklvEBriMFkwA%3D%3D
                     expires: 1766010132645
         '401':
           description: Your request was not authorized, or your API Key was invalid
