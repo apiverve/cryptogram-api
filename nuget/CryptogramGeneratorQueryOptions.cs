@@ -17,7 +17,7 @@ namespace APIVerve.API.CryptogramGenerator
         public string Text { get; set; }
 
         /// <summary>
-        /// Use a random famous quote
+        /// Use a random famous quote instead of text (a quote is also used when text is omitted)
         /// </summary>
         [JsonProperty("random")]
         public bool? Random { get; set; }
