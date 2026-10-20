@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -25,7 +25,9 @@ class CryptogramAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "text": {"type": "string", "required": False, "maxLength": 500},
-        "random": {"type": "boolean", "required": False, "default": True}
+        "random": {"type": "boolean", "required": False, "default": False},
+        "image": {"type": "boolean", "required": False, "default": False},
+        "solutionImage": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
