@@ -1,7 +1,7 @@
 name: apiverve_cryptogram
-description: Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.
-version: 1.1.14
-homepage: https://apiverve.com/marketplace/cryptogram?utm_source=dart&utm_medium=homepage
+description: "Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text."
+version: 1.2.3
+homepage: https://apiverve.com/marketplace/cryptogram?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/cryptogram-api/tree/main/dart
 
 environment:

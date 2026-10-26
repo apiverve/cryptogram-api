@@ -46,11 +46,13 @@ final _formatPatterns = {
 
 /// Cryptogram Generator API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/cryptogram?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/cryptogram?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [text] - Text to encode (max 500 characters) [maxLength: 500]
-/// * [random] - Use a random famous quote
+/// * [random] - Use a random famous quote instead of text (a quote is also used when text is omitted)
+/// * [image] - Set to true to generate a downloadable puzzle image
+/// * [solutionImage] - Set to true to generate a downloadable solution image
 class CryptogramClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +62,8 @@ class CryptogramClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'text': ValidationRule(type: 'string', required: false, maxLength: 500),
     'random': ValidationRule(type: 'boolean', required: false),
+    'image': ValidationRule(type: 'boolean', required: false),
+    'solutionImage': ValidationRule(type: 'boolean', required: false),
   };
 
   CryptogramClient(this.apiKey, {
