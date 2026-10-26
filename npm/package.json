@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/cryptogram",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.",
   "main": "index.js",
   "types": "index.d.ts",
