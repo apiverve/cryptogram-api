@@ -1,7 +1,7 @@
 {
     "name": "apiverve/cryptogram",
     "description": "Cryptogram Generator creates letter substitution cipher puzzles where each letter is replaced with another letter consistently throughout the text.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
